@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>掘金</title>
+		<link rel="stylesheet" href="css/project.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/animate.css" />
+		<script src="js/angular.min.js"></script>
+		<script src="js/angualr-route.js"></script>
+		<script src="js/angular-animate.js"></script>
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	</head>
+
+	<body style="background-color: #F8F9FA;" ng-app="app" ng-controller="controller">
+		<div class="header">
+			<div class="container">
+				<img class="logo fl" src="svg/logo-header.svg" />
+				<span class="fr">
+					<span class="iconfont icon-tianjiaadd"></span>
+					<span class="iconfont icon-sousuobanjisousuo"></span>
+					<span class="iconfont icon-bell"></span>
+					<span class="iconfont icon-geren"></span>
+				</span>
+			</div>
+		</div>
+		<div class="box">
+			<div class="sidebar">
+				<div class="banner">
+					<span class="iconfont icon-guanbi1"></span>
+				</div>
+				<ul class="car fl">
+					<li class="first " ng-class="{active:statusH === '/page'}">
+						<a href="#page">首页</a>
+					</li>
+					<li class="second" ng-class="{active:statusH === '/attention'}">
+						<a href="#attention">我关注的</a>
+					</li>
+					<li class="third" ng-class="{active:statusH === '/special'}">
+						<a href="#special">专栏</a>
+					</li>
+					<li class="fourth" ng-class="{active:statusH === '/collect'}">
+						<a href="#collect">收藏集</a>
+					</li>
+					<li class="fived" ng-class="{active:statusH === '/find'}"> 
+						<a href="#find">发现</a>
+					</li>
+				</ul>
+			</div>
+			<ul class="mymessage">
+				<div class="list-item-group">
+					<li>我的主页</li>
+					<li>我喜欢的</li>
+					<li>我的收藏集</li>
+					<li>标签管理</li>
+				</div>
+				<div class="list-item-group">
+					<li>设置</li>
+					<li class="about-active">关于 <span class="fr">></span></li>
+				</div>
+				<div class="list-item-group">
+					<li>登出</li>
+				</div>
+			</ul>
+			<ul class="about">
+				<li>下载应用</li>
+				<li>关于</li>
+				<li>加入我们</li>
+				<li>翻译计划</li>
+				<li>合作伙伴</li>
+			</ul>
+
+			<!-- 存放模板视图的地方 -->
+			<p ng-view class="fr"></p>
+
+			<script type="text/ng-template" id="tmp1" ng-mousemove="ccc()">
+				<div class="content fr">
+					<div class="header-action">
+						<div class="action-box">
+							<div class="action fl"><span style="color: #007AFF;font-weight: 600;">热门</span></div>
+							<div class="line fl"></div>
+							<div class="action fl"><span>最新</span></div>
+							<div class="line fl"></div>
+							<div class="action fl"><span>评论</span></div>
+							<div class="action fr"><span>历史最热</span></div>
+							<div class="action fr"><span>本月最热</span></div>
+							<div class="action fr"><span>本周最热</span></div>
+						</div>
+					</div>
+					<div class="matter">
+						<ul>
+							<li class="entry-item">
+								<div class="entry-info">
+									<div><img class="chatu1 fl" src="img/chatu1.jpg" /></div>
+									<div class="info-row fl">
+										<span class="title fl">一个治愈Java Script疲劳的学习计划</span>
+										<p class="hours fr">36分钟前</p>
+									</div>
+									<br />
+									<div class="btn fl">
+										<div class="like  fl"><span class="iconfont icon-xihuan"> 102</span></div>
+										<div class="message fl"><span class="iconfont icon-xinxi"></span></div>
+									</div>
+									<div class="tag fr">
+										<div class="annotation fl"><span class="original">原创</span></div>
+										<div class="annotation fl"><span class="front">前端</span></div>
+										<div class="annotation fl"><span class="resource">工具资源</span></div>
+										<div class="fl"><img class="img1" src="img/img2.jpg" /></div>
+									</div>
+								</div>
+							</li>
+							<li class="entry-item">
+								<div class="entry-info">
+									<div><img class="chatu1 fl" src="img/chatu2.jpeg" /></div>
+									<div class="info-row fl">
+										<span class="title fl">微信官方公开课'微信小程序专场'资源汇总</span>
+										<p class="hours fr">1小时前</p>
+									</div>
+									<br />
+									<div class="btn fl">
+										<div class="like  fl"><span class="iconfont icon-xihuan"> 163</span></div>
+										<div class="message fl"><span class="iconfont icon-xinxi"></span> 9</div>
+									</div>
+									<div class="tag fr">
+										<div class="annotation fl"><span class="original">推荐</span></div>
+										<div class="annotation fl"><span class="front">微信</span></div>
+										<div class="annotation fl"><span class="resource">微信小程序</span></div>
+										<div class="fl"><img class="img1" src="img/img3.jpg" /></div>
+									</div>
+								</div>
+							</li>
+							<li class="entry-item">
+								<div class="entry-info">
+									<div><img class="chatu1 fl" src="img/chatu3.jpg" /></div>
+									<div class="info-row fl">
+										<span class="title fl">10+ 优质实用简洁的个人简历模板打包下载（二）</span>
+										<p class="hours fr">3小时前</p>
+									</div>
+									<br />
+									<div class="btn fl">
+										<div class="like  fl"><span class="iconfont icon-xihuan"> 72</span></div>
+										<div class="message fl"><span class="iconfont icon-xinxi"></span> 11</div>
+									</div>
+									<div class="tag fr">
+										<div class="annotation fl"><span class="original">设计</span></div>
+										<div class="annotation fl"><span class="front">面试</span></div>
+										<div class="annotation fl"><span class="resource">工具资源</span></div>
+										<div class="fl"><img class="img1" src="img/img4.jpg" /></div>
+									</div>
+								</div>
+							</li>
+							<li class="entry-item">
+								<div class="entry-info">
+									<div><img class="chatu1 fl" src="img/chatu4.jpeg" /></div>
+									<div class="info-row fl">
+										<span class="title fl">了解真实的『REM』手机屏幕适配</span>
+										<p class="hours fr">7小时前</p>
+									</div>
+									<br />
+									<div class="btn fl">
+										<div class="like  fl"><span class="iconfont icon-xihuan"> 489</span></div>
+										<div class="message fl"><span class="iconfont icon-xinxi"></span> 20</div>
+									</div>
+									<div class="tag fr">
+										<div class="annotation fl"><span class="original">前端</span></div>
+										<div class="annotation fl"><span class="front">移动</span></div>
+										<div class="annotation fl"><span class="resource">响应式设计</span></div>
+										<div class="fl"><img class="img1" src="img/1.jpg" /></div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</script>
+			<script type="text/ng-template" id="tmp2">
+				<div class="content fr">
+					<div class="header-action">
+						<div class="action-box">
+							<div class="action fl"><span>热门</span></div>
+							<div class="line fl"></div>
+							<div class="action fl"><span style="color: #007AFF;font-weight: 600;">最新</span></div>
+							<div class="line fl"></div>
+							<div class="action fl"><span>评论</span></div>
+							<div class="action fr"><span>历史最热</span></div>
+							<div class="action fr"><span>本月最热</span></div>
+							<div class="action fr"><span>本周最热</span></div>
+						</div>
+					</div>
+					<div class="matter">
+						<ul>
+							<li class="entry-item">
+								<div class="entry-info">
+									<div><img class="chatu1 fl" src="img/tmp2chatu1.jpg" /></div>
+									<div class="info-row fl">
+										<span class="title fl">“全栈”与“前端”Fuck all Ducks</span>
+										<p class="hours fr">10分钟前</p>
+									</div>
+									<br />
+									<div class="btn fl">
+										<div class="like  fl"><span class="iconfont icon-xihuan"> 19</span></div>
+										<div class="message fl"><span class="iconfont icon-xinxi"> 1</span></div>
+									</div>
+									<div class="tag fr">
+										<div class="annotation fl"><span class="original">专栏</span></div>
+										<div class="annotation fl"><span class="front">全栈</span></div>
+										<div class="annotation fl"><span class="resource">web前端</span></div>
+										<div class="fl"><img class="img1" src="img/img2.jpg" /></div>
+									</div>
+								</div>
+							</li>
+							<li class="entry-item">
+								<div class="entry-info">
+									<div><img class="chatu1 fl" src="img/tmp2chatu2.png" /></div>
+									<div class="info-row fl">
+										<span class="title fl">基于iscroll.js实现下拉刷新和上拉加载特效</span>
+										<p class="hours fr">28分钟前</p>
+									</div>
+									<br />
+									<div class="btn fl">
+										<div class="like  fl"><span class="iconfont icon-xihuan"> 7</span></div>
+										<div class="message fl"><span class="iconfont icon-xinxi"></span> 1</div>
+									</div>
+									<div class="tag fr">
+										<div class="annotation fl"><span class="original">推荐</span></div>
+										<div class="annotation fl"><span class="front">微信</span></div>
+										<div class="annotation fl"><span class="resource">微信小程序</span></div>
+										<div class="fl"><img class="img1" src="img/img3.jpg" /></div>
+									</div>
+								</div>
+							</li>
+							<li class="entry-item">
+								<div class="entry-info">
+									<div><img class="chatu1 fl" src="img/tmp2chatu3.jpg" /></div>
+									<div class="info-row fl">
+										<span class="title fl">既然写CSS很容易，那为什么大家还是把CSS写的那么烂呢？</span>
+										<p class="hours fr">6小时前</p>
+									</div>
+									<br />
+									<div class="btn fl">
+										<div class="like  fl"><span class="iconfont icon-xihuan"> 181</span></div>
+										<div class="message fl"><span class="iconfont icon-xinxi"></span> 2</div>
+									</div>
+									<div class="tag fr">
+										<div class="annotation fl"><span class="original">设计</span></div>
+										<div class="annotation fl"><span class="front">CSS</span></div>
+										<div class="annotation fl"><span class="resource">web前端</span></div>
+										<div class="fl"><img class="img1" src="img/img4.jpg" /></div>
+									</div>
+								</div>
+							</li>
+							<li class="entry-item">
+								<div class="entry-info">
+									<div><img class="chatu1 fl" src="img/tmp2chatu4.jpg" /></div>
+									<div class="info-row fl">
+										<span class="title fl">【原创】Bootstrap文件上传组件：bootstrap fileinput</span>
+										<p class="hours fr">12小时前</p>
+									</div>
+									<br />
+									<div class="btn fl">
+										<div class="like  fl"><span class="iconfont icon-xihuan"> 17</span></div>
+										<div class="message fl"><span class="iconfont icon-xinxi"></span></div>
+									</div>
+									<div class="tag fr">
+										<div class="annotation fl"><span class="original">前端</span></div>
+										<div class="annotation fl"><span class="front">原创</span></div>
+										<div class="annotation fl"><span class="resource">Bootstrap</span></div>
+										<div class="fl"><img class="img1" src="img/1.jpg" /></div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</script>
+			<script type="text/ng-template" id="tmp3">
+				<div class="bar clearfix">
+					<div class="body-box fl">
+						<div class="header3">
+							<div class="group">
+								<p class="title-header fl">原创文章</p>
+								<span class="fr">评论</span>
+								<div class="line fr"></div>
+								<span class="fr" style="color: #007AFF; font-weight: 600;">最新</span>
+								<div class="line fr"></div>
+								<span class="fr">热门</span>
+							</div>
+						</div>
+						<ul class="entry-list">
+							<li>
+								<div class="body-top">
+									<img class="head-pic gg fl" src="img/head2.jpg" ng-mousemove="ccc()" />
+									<p class="name fl">anly_jun · 1小时前</p>
+								</div>
+								<h2>大龙帮忙去谈判---代理模式</h2>
+								<p class="body-middle">写一些开发中的小技巧 实现DrawerLayout上汉堡按钮的动画效果 效果图 当侧滑DrawerLayout的时候，左上角的汉堡按钮会有动画发生。 代码实现如下： ActionBarDrawerToggle toggle = new ActionBarDrawerToggle…</p>
+								<div class="body-bottom">
+									<div class="body-bottom-first fl"><span class="iconfont icon-xihuan"></span></div>
+									<div class="body-bottom-second fl"><span class="iconfont icon-xinxi"></span></div>
+									<p class="fr">阅读全文</p>
+								</div>
+							</li>
+							<li>
+								<div class="body-top">
+									<img class="head-pic hh fl" src="img/head.jpg" />
+									<p class="name fl">劭哥stone · 4小时前</p>
+								</div>
+								<h2>《JavaScript 闯关记》 之 DOM（上）</h2>
+								<p class="body-middle">DOM（文档对象模型）是针对 HTML 和 XML 文档的一个 API。DOM 描绘了一个层次化的节点树，允许开发人员添加、移除和修改页面的某一部分。 节点层次 DOM 可以将任何 HTML 或 XML 文档描绘成一个由多层节点构成的结构。节点分为几种不同的类型，每种类型分别表…</p>
+								<div class="body-bottom">
+									<div class="body-bottom-first fl"><span class="iconfont icon-xihuan"></span></div>
+									<div class="body-bottom-second fl"><span class="iconfont icon-xinxi"></span></div>
+									<p class="fr">阅读全文</p>
+								</div>
+							</li>
+							<li>
+								<div class="body-top">
+									<img class="head-pic fl" src="img/head1.jpg" />
+									<p class="name fl">牛仔程序员 · 1小时前</p>
+								</div>
+								<h2>PHP与定时器</h2>
+								<p class="body-middle">在一般情况下，我们都是通过客户端浏览器来触发服务端的PHP脚本，这种触发的方式是手动的，并不能做到定时触发。并且，使得手动触发耗时时间很长的脚本的时候，因为受到服务器端设定的超时时间等条件的限制，导致最后执行失败。想要做到定时执行，就需要结合Linux服务器端的Crontab</p>
+								<div class="body-bottom">
+									<div class="body-bottom-first fl"><span class="iconfont icon-xihuan"></span></div>
+									<div class="body-bottom-second fl"><span class="iconfont icon-xinxi"></span></div>
+									<p class="fr">阅读全文</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="aside-box fl">
+						<div class="right-top">
+							<p style="font-weight: 600;cursor: context-menu;">本周热门文章</p>
+							<div style="margin-bottom: 40px;">
+								<p class="special">Android 接入微信支付宝支付</p>
+								<span class="iconfont icon-xihuan fl" style="color: #d2d2d2;cursor: context-menu;"> 555</span>
+							</div>
+							<div style="margin-bottom: 40px;">
+								<p class="special">Android 蹲坑的疑难杂症集锦一</p>
+								<span class="iconfont icon-xihuan fl" style="color: #d2d2d2;cursor: context-menu;"> 404</span>
+							</div>
+							<div style="margin-bottom: 60px;">
+								<p class="special">关于RxJava最友好的文章</p>
+								<span class="iconfont icon-xihuan fl" style="color: #d2d2d2;cursor: context-menu;"> 392</span>
+							</div>
+						</div>
+						<div class="right-bottom">
+							<p style="font-weight: 600;cursor: context-menu;">热门讨论</p>
+							<div style="margin-bottom: 40px;">
+								<p class="special">关于RxJava最友好的文章</p>
+								<span class="iconfont icon-xihuan fl" style="color: #d2d2d2;"> 392</span>
+							</div>
+							<div style="margin-bottom: 40px;">
+								<p class="special">【Android】 仿斗鱼滑动验证码</p>
+								<span class="iconfont icon-xihuan fl" style="color: #d2d2d2;"> 166</span>
+							</div>
+							<div style="margin-bottom: 40px;">
+								<p class="special">用github来展示你的前端页面吧</p>
+								<span class="iconfont icon-xihuan fl" style="color: #d2d2d2;"> 306</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+			</script>
+			<script type="text/ng-template" id="tmp4">
+				<div class="box-pic">
+					<div class="header-pic">
+						<div class="group-left fl">
+							<ul>
+								<li class="fl">热门</li>
+								<li class="line fl"></li>
+								<li class="fl" style="color: #007AFF;font-weight: 600;">最新</li>
+							</ul>
+						</div>
+						<div class="group-right fr">
+							<ul>
+								<li class="fl" style="color: #007AFF;font-weight: 600;">全部</li>
+								<li class="fl">iOS</li>
+								<li class="fl">Android</li>
+								<li class="fl">前端</li>
+								<li class="fl">设计</li>
+								<li class="fl">产品</li>
+								<li class="fl">后端</li>
+							</ul>
+						</div>
+					</div>
+					<div class="collections">
+						<div class="tmp4-pic1 fl">
+							<div class="shade">
+								<div class="pic-title">
+									<a>Android 版本更新</a>
+									<p class="fl">wenmin92 · 10 篇文章 · 23 人关注</p>
+									<div class="attention-btn fr">关注</div>
+								</div>
+							</div>
+						</div>
+						<div class="tmp4-pic2 fl">
+							<div class="shade">
+								<div class="pic-title">
+									<a>Mac 应用推荐合集</a>
+									<p class="fl">膜法小编 · 10 篇文章 · 93 人关注</p>
+									<div class="attention-btn fr">关注</div>
+								</div>
+							</div>
+						</div>
+						<div class="tmp4-pic3 fl">
+							<div class="shade">
+								<div class="pic-title">
+									<a>Node.js 项目实践</a>
+									<p class="fl">膜法小编 · 9 篇文章 · 60 人关注</p>
+									<div class="attention-btn fr">关注</div>
+								</div>
+							</div>
+						</div>
+						<div class="tmp4-pic4 fl">
+							<div class="shade">
+								<div class="pic-title">
+									<a>Java进阶之路</a>
+									<p class="fl">头号粉丝 · 23 篇文章 · 60 人关注</p>
+									<div class="attention-btn fr">关注</div>
+								</div>
+							</div>
+						</div>
+						<div class="tmp4-pic5 fl">
+							<div class="shade">
+								<div class="pic-title">
+									<a>前端学习资源</a>
+									<p class="fl">膜法小编 · 11 篇文章 · 129 人关注</p>
+									<div class="attention-btn fr">关注</div>
+								</div>
+							</div>
+						</div>
+						<div class="tmp4-pic6 fl">
+							<div class="shade">
+								<div class="pic-title">
+									<a>AndroidStudio 插件汇总</a>
+									<p class="fl">NeXT___ · 18 篇文章 · 4 人关注</p>
+									<div class="attention-btn fr">关注</div>
+								</div>
+							</div>
+						</div>
+						<div class="tmp4-pic7 fl">
+							<div class="shade">
+								<div class="pic-title">
+									<a>色情网站 の 黑科技</a>
+									<p class="fl">kalasoo · 3 篇文章 · 43 人关注</p>
+									<div class="attention-btn fr">关注</div>
+								</div>
+							</div>
+						</div>
+						<div class="tmp4-pic8 fl">
+							<div class="shade">
+								<div class="pic-title">
+									<a>webpack</a>
+									<p class="fl">李CHENGXI · 12 篇文章 · 74 人关注</p>
+									<div class="attention-btn fr">关注</div>
+								</div>
+							</div>
+						</div>
+						<div class="tmp4-pic9 fl">
+							<div class="shade">
+								<div class="pic-title">
+									<a>Go 语言入门进阶</a>
+									<p class="fl">smallSohoSolo · 12 篇文章 · 38 人关注</p>
+									<div class="attention-btn fr">关注</div>
+								</div>
+							</div>
+						</div>
+						<div class="tmp4-pic10 fl">
+							<div class="shade">
+								<div class="pic-title">
+									<a>来 DIY 个机器人</a>
+									<p class="fl">smallSohoSolo · 12 篇文章 · 26 人关注</p>
+									<div class="attention-btn fr">关注</div>
+								</div>
+							</div>
+						</div>
+						<div class="tmp4-pic11 fl">
+							<div class="shade">
+								<div class="pic-title">
+									<a>自定义控件</a>
+									<p class="fl">苦心孤轶 · 29 篇文章 · 72 人关注</p>
+									<div class="attention-btn fr">关注</div>
+								</div>
+							</div>
+						</div>
+						<div class="tmp4-pic12 fl">
+							<div class="shade">
+								<div class="pic-title">
+									<a>玩转 HTTPS</a>
+									<p class="fl">膜法小编 · 12 篇文章 · 109 人关注</p>
+									<div class="attention-btn fr">关注</div>
+								</div>
+							</div>
+						</div>
+						<div class="tmp4-pic13 fl">
+							<div class="shade">
+								<div class="pic-title">
+									<a>Swift 特性</a>
+									<p class="fl">轩辕小羽 · 16 篇文章 · 53 人关注</p>
+									<div class="attention-btn fr">关注</div>
+								</div>
+							</div>
+						</div>
+						<div class="tmp4-pic14 fl">
+							<div class="shade">
+								<div class="pic-title">
+									<a>RxJava最友好的系列文章</a>
+									<p class="fl">拉丁吴 · 3 篇文章 · 45 人关注</p>
+									<div class="attention-btn fr">关注</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</script>
+			<script type="text/ng-template" id="tmp5">
+				<div class="content fr">
+					<div class="header-action">
+						<div class="action-box">
+							<div class="action fl"><span style="color: #007AFF;font-weight: 600;">热门</span></div>
+							<div class="line fl"></div>
+							<div class="action fl"><span>最新</span></div>
+							<div class="line fl"></div>
+							<div class="action fl"><span>评论</span></div>
+							<div class="action fr"><span>历史最热</span></div>
+							<div class="action fr"><span>本月最热</span></div>
+							<div class="action fr"><span>本周最热</span></div>
+						</div>
+					</div>
+					<div class="matter">
+						<ul>
+							<li class="entry-item">
+								<div class="entry-info">
+									<div><img class="chatu1 fl" src="img/chatu5.png" /></div>
+									<div class="info-row fl">
+										<span class="title fl">2017 互联网校园招聘的一些面试题</span>
+										<p class="hours fr">3小时前</p>
+									</div>
+									<br />
+									<div class="btn fl">
+										<div class="like  fl"><span class="iconfont icon-xihuan"> 46</span></div>
+										<div class="message fl"><span class="iconfont icon-xinxi"></span></div>
+									</div>
+									<div class="tag fr">
+										<div class="annotation fl"><span class="original">面试</span></div>
+										<div class="annotation fl"><span class="front">开发</span></div>
+										<div class="annotation fl"><span class="resource">Android</span></div>
+										<div class="fl"><img class="img1" src="img/img2.jpg" /></div>
+									</div>
+								</div>
+							</li>
+							<li class="entry-item">
+								<div class="entry-info">
+									<div><img class="chatu1 fl" src="img/chatu6.JPG" /></div>
+									<div class="info-row fl">
+										<span class="title fl">优化表单设计及注意事项</span>
+										<p class="hours fr">2小时前</p>
+									</div>
+									<br />
+									<div class="btn fl">
+										<div class="like  fl"><span class="iconfont icon-xihuan"> 9</span></div>
+										<div class="message fl"><span class="iconfont icon-xinxi"></span> 9</div>
+									</div>
+									<div class="tag fr">
+										<div class="annotation fl"><span class="original">设计</span></div>
+										<div class="annotation fl"><span class="front">前端</span></div>
+										<div class="annotation fl"><span class="resource">Android</span></div>
+										<div class="fl"><img class="img1" src="img/img3.jpg" /></div>
+									</div>
+								</div>
+							</li>
+							<li class="entry-item">
+								<div class="entry-info">
+									<div><img class="chatu1 fl" src="img/chatu7.png" /></div>
+									<div class="info-row fl">
+										<span class="title fl">一个 2 年安卓开发者的一些忠告</span>
+										<p class="hours fr">一天前</p>
+									</div>
+									<br />
+									<div class="btn fl">
+										<div class="like  fl"><span class="iconfont icon-xihuan"> 703</span></div>
+										<div class="message fl"><span class="iconfont icon-xinxi"></span> 11</div>
+									</div>
+									<div class="tag fr">
+										<div class="annotation fl"><span class="original">设计</span></div>
+										<div class="annotation fl"><span class="front">前端</span></div>
+										<div class="annotation fl"><span class="resource">Android</span></div>
+										<div class="fl"><img class="img1" src="img/img4.jpg" /></div>
+									</div>
+								</div>
+							</li>
+							<li class="entry-item">
+								<div class="entry-info">
+									<div><img class="chatu1 fl" src="img/chatu8.png" /></div>
+									<div class="info-row fl">
+										<span class="title fl">18 个惊人的 Angular 开源项目</span>
+										<p class="hours fr">7小时前</p>
+									</div>
+									<br />
+									<div class="btn fl">
+										<div class="like  fl"><span class="iconfont icon-xihuan"> 146</span></div>
+										<div class="message fl"><span class="iconfont icon-xinxi"></span> 20</div>
+									</div>
+									<div class="tag fr">
+										<div class="annotation fl"><span class="original">原创</span></div>
+										<div class="annotation fl"><span class="front">前端</span></div>
+										<div class="annotation fl"><span class="resource">Angular.js</span></div>
+										<div class="fl"><img class="img1" src="img/1.jpg" /></div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</script>
+		</div>
+		<div class="publish">
+			<span class="iconfont icon-xinxi"></span>
+		</div>
+		<div class="top">
+			<span class="iconfont icon-huidaodingbuxianxing"></span>
+		</div>
+		<div class="publish-box">
+			<div class="publish-box-header">
+				<p class="fl">给我们留言</p>
+				<span class="iconfont icon-xiala fr"></span>
+			</div>
+			<div class="publish-box-body">
+				<p>您好，很抱歉我们暂时无法回复你，如需帮助，请留言，我们将尽快联系并解决您的问题。（如果你申请联合编辑，我们也将很快回复你）</p>
+			</div>
+			<div class="from-group">
+				<div class="email-title">
+					<p>邮箱</p>
+				</div>
+				<div class="email-text">
+					<input type="text" id="ticketEmail" placeholder="请输入邮箱" />
+				</div>
+			</div>
+			<div class="from-group">
+				<div class="leave-title">
+					<p>留言内容</p>
+				</div>
+				<div class="group-content">
+					<textarea id="ticketContent" placeholder="请输入留言内容" /></textarea>
+				</div>
+			</div>
+			<div class="btn-group">
+				<input type="submit" id="ticketSubmit" value="提交" />
+			</div>
+			<div class="footer">
+				<div class="holder">
+					<p>客服软件由美洽提供</p>
+				</div>
+			</div>
+		</div>
+		<div class="mouse-move">
+			<div class="mouse-move-head">
+				<img class="mouse-move-header" src="img/head2.jpg" />
+				<span>anly_jun</span>
+				<span>程序员 @非典型程序员</span>
+			</div>
+			<ul>
+				<li class="fl">
+					<p>26</p>
+					<p>分享</p>
+				</li>
+				<li class="fl">
+					<p>1631</p>
+					<p>阅读</p>
+				</li>
+				<li class="fl">
+					<p>234</p>
+					<p>喜欢</p>
+				</li>
+			</ul>
+		</div>
+		<div class="mouse-move-one">
+			<div class="mouse-move-head-one">
+				<img class="mouse-move-header-one" src="img/head.jpg" />
+				<span>劭哥stone</span>
+				<span>程序员 @非洲的巴扎黑</span>
+			</div>
+			<ul>
+				<li class="fl">
+					<p>35</p>
+					<p>分享</p>
+				</li>
+				<li class="fl">
+					<p>2777</p>
+					<p>阅读</p>
+				</li>
+				<li class="fl">
+					<p>501</p>
+					<p>喜欢</p>
+				</li>
+			</ul>
+		</div>
+		<script>
+			//将路由模块引入
+			var app = angular.module('app', ['ngRoute']);
+			//配置路由
+			app.config(['$routeProvider', function($routeProvider) {
+				$routeProvider
+					.when('/page', {
+						templateUrl: 'tmp1', //将模板的id传入
+						/*controller: 'IndexController'*/
+					})
+					.when('/attention', {
+						templateUrl: 'tmp2', //将模板的id传入
+						/*controller: 'IndexController'*/
+					})
+					.when('/special', {
+						templateUrl: 'tmp3', //将模板的id传入
+						//controller: 'IndexController'
+					})
+					.when('/collect', {
+						templateUrl: 'tmp4', //将模板的id传入
+						//controller: 'IndexController'
+						
+					})
+					.when('/find', {
+						templateUrl: 'tmp5', //将模板的id传入
+						//controller: 'IndexController'
+					})
+					.otherwise({
+						redirectTo: '/page',
+						//controller: 'IndexController'
+					})
+					
+					
+					
+			}]);
+			app.run(['$rootScope','$location',function($rootScope,$location){
+		       $rootScope.statusH = '/page';
+		       $rootScope.mama=function(){
+					
+			switch($location.path()) {
+				case '/page':
+					$rootScope.statusH = '/page';
+					break;
+				case '/attention':
+					$rootScope.statusH = '/attention';
+					break;
+				case '/special':
+					$rootScope.statusH = '/special';
+					break;
+				case '/collect':
+					$rootScope.statusH = '/collect';
+					break;
+				case '/find':
+					$rootScope.statusH = '/find';
+					break;
+				default:
+					$rootScope.statusH = '/page';
+					break;
+			}
+				}	
+					$rootScope.mama();
+					$rootScope.$on('$routeChangeSuccess',function(event,current,previous){
+		            	$rootScope.mama()
+		        	});
+		//			alert($location.path())
+		    }]);
+
+			//头像详细信息
+			app.controller('controller', ['$scope', '$routeParams', function($scope, $routeParams) {
+				$scope.content = "Index"
+				$scope.ccc = function(){
+        			$('.gg').mouseover(function(){
+						$('.mouse-move').fadeIn()        		
+        			})
+        			$('.gg').mouseout(function(){
+						$('.mouse-move').fadeOut()        		
+        			})
+        			$('.hh').mouseover(function(){
+						$('.mouse-move-one').fadeIn()        		
+        			})
+        			$('.hh').mouseout(function(){
+						$('.mouse-move-one').fadeOut()        		
+        			})
+        		};
+			}]);
+			//滚动页面出现回到顶部
+			$(function() {
+				$(document).scroll(function() {
+//					console.log($(this).scrollTop())
+					if($(this).scrollTop() > 50) {
+						$('.top').show();
+						$('.top').click(function() {
+							$(document).scrollTop(0)
+						})
+					} else {
+						$('.top').hide();
+					}
+				$(document).mousemove(function(e){
+//					console.log(e.clientY)
+					if (e.clientY>210) {
+						$('.mouse-move').addClass('active')
+						$('.mouse-move-one').addClass('active')
+					} else{
+//						alert(2)
+						$('.mouse-move').removeClass('active')
+						$('.mouse-move-one').removeClass('active')
+					}
+				})
+//					$(document).mousemove(function(e){
+//						
+//					})
+				})
+			})
+			//头部个人信息
+			var aaa=true;
+				$('.iconfont.icon-geren').click(function(){
+						$('.mymessage').show();
+						aaa=false;
+						setTimeout(function(){
+							$(document).on('click',function(e){
+							e=e||window.event;
+							var abc=e.target;
+								if (aaa) {
+									
+								} else{
+									if (String(abc.classList)==='list-item-group') {
+									
+									} else{
+										$(".mymessage").hide()
+										aaa=true;
+										$(document).off('click')
+									}
+								}
+							})
+						},100)
+				})
+				
+				$('.about-active').mousemove(function(){
+					$('.about').show()
+				})
+				$('.about-active').mouseout(function(){
+					$('.about').hide()
+				})
+				
+				$('.first').click(function(){
+					$('.first').addClass('active').siblings().removeClass('active')
+				})
+				$('.second').click(function(){
+					$('.second').addClass('active').siblings().removeClass('active')
+				})
+				$('.third').click(function(){
+					$('.third').addClass('active').siblings().removeClass('active')
+				})
+				$('.fourth').click(function(){
+					$('.fourth').addClass('active').siblings().removeClass('active')
+				})
+				$('.fived').click(function(){
+					$('.fived').addClass('active').siblings().removeClass('active')
+				})
+				
+			//随机banner图	
+			var arr=['img/banner.jpg','img/banner2.png','img/banner3.png'];  //图片路径存放的数组
+			var num = Math.floor(Math.random()*3);	//随机的图片路径的索引
+			var _src=arr[num];	//当前要显示的图片的路径
+			var pic= "url("+_src+")"
+			$('.banner').css('background-image',pic)
+			//关闭banner
+			$('.iconfont.icon-guanbi1').click(function(){
+				$('.banner').hide()
+			})
+			//发表及关闭发表
+			$('.publish').click(function(){
+				$('.publish-box').toggle()
+			})
+			$('.iconfont.icon-xiala').click(function(){
+				$('.publish-box').hide()
+			})
+			//点赞效果
+			$(function() {
+				$('.iconfont.icon-xihuan').click(function(){
+						if ($(this).hasClass('animated pulse')) {
+							$(this).removeClass('animated pulse').css('color','rgba(24, 37, 50, 0.298039)')
+        				var num=$(this).html()
+        				num--
+        				$(this).html(num)
+						} else{
+							$(this).addClass('animated pulse').css('color','#83c73a')
+        				var num=$(this).html()
+        				num++
+        				$(this).html(num)
+						}
+        			})
+				$('.car>li').click(function(){
+					window.location.reload()
+				})
+				})
+			$('.about').mouseover(function(){
+				$('.about').show()
+			})
+		</script>
+	</body>
+
+</html>
